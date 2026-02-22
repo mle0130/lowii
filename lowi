@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surprise for Louie ❤️</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ff9a9e, #fecfef, #fecfef);
+            font-family: Arial, sans-serif;
+            flex-direction: column;
+        }
+        .container {
+            text-align: center;
+            background: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            max-width: 400px;
+        }
+        h1 {
+            color: #e91e63;
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        .buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+        button {
+            padding: 15px 30px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s;
+            position: relative;
+        }
+        #yes {
+            background: linear-gradient(135deg, #ff6b9d, #e91e63);
+            color: white;
+            font-weight: bold;
+            box-shadow: 0 5px 15px rgba(233, 30, 99, 0.4);
+        }
+        #yes:hover { transform: scale(1.1); }
+        #no {
+            background: #f8bbd9;
+            color: #c2185b;
+            font-weight: bold;
+        }
+        #no:hover {
+            transform: translate(calc(50vw - 50%), calc(50vh - 50%)) !important;
+            position: fixed !important;
+            z-index: 1000;
+        }
+        .response {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #4caf50;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Louie, will you love me? 💕</h1>
+        <div class="buttons">
+            <button id="yes">Yes 😍</button>
+            <button id="no">No</button>
+        </div>
+        <div id="response" class="response">I knew it, Louie! I love you forever! ❤️❤️❤️</div>
+    </div>
+
+    <script>
+        const yesBtn = document.getElementById('yes');
+        const noBtn = document.getElementById('no');
+        const response = document.getElementById('response');
+        const title = document.querySelector('h1');
+
+        yesBtn.addEventListener('click', () => {
+            response.style.display = 'block';
+            title.innerHTML = 'Yay, Louie! We\'re together forever! 💖';
+            yesBtn.style.display = 'none';
+            noBtn.style.display = 'none';
+        });
+
+        noBtn.addEventListener('mouseover', () => {
+            const x = Math.random() * window.innerWidth;
+            const y = Math.random() * window.innerHeight;
+            noBtn.style.transform = `translate(${x}px, ${y}px)`;
+            noBtn.style.position = 'fixed';
+        });
+    </script>
+</body>
+</html>
