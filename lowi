@@ -76,12 +76,12 @@
 </head>
 <body>
     <div class="container">
-        <h1>Louie, will you love me? 💕</h1>
+        <h1>Louie, saba 💕</h1>
         <div class="buttons">
             <button id="yes">Yes 😍</button>
             <button id="no">No</button>
         </div>
-        <div id="response" class="response">I knew it, Louie! I love you forever! ❤️❤️❤️</div>
+        <div id="response" class="response">kasuko diha❤️❤️❤️</div>
     </div>
 
     <script>
@@ -92,7 +92,7 @@
 
         yesBtn.addEventListener('click', () => {
             response.style.display = 'block';
-            title.innerHTML = 'Yay, Louie! We\'re together forever! 💖';
+            title.innerHTML = 'ohlol, Louie! saba 💖';
             yesBtn.style.display = 'none';
             noBtn.style.display = 'none';
         });
